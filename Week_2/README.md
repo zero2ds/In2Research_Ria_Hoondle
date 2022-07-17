@@ -1,1 +1,1 @@
-# Ria's Week 2 progress
+# Ria's Week 1 & 2 progress
