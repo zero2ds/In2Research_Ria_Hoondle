@@ -13,3 +13,5 @@ This scatter plot demonstrates the negative correlation coefficient between the 
 In these two correlation matricies, I have plotted the correlation coefficient values by colour to allow trends to be idenitified more easily. Here I have investigated the correlation between several variable pairs such as number of available doctors, cancer cases, road traffic deaths and basic sanitation available. 
 [week 3 report.docx](https://github.com/zero2ds/In2Research_Ria_Hoondle/files/9154651/week.3.report.docx)
 
+<img width="454" alt="Screen Shot 2022-07-22 at 12 49 26" src="https://user-images.githubusercontent.com/78815761/180433646-5440ee5f-6a4e-4734-954c-6e85ff932a93.png">
+The 3D scatter plot above demonstrates the correlation between three healthcare variables
