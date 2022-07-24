@@ -15,5 +15,11 @@ In these two correlation matricies, I have plotted the correlation coefficient v
 
 <img width="454" alt="Screen Shot 2022-07-22 at 12 49 26" src="https://user-images.githubusercontent.com/78815761/180433646-5440ee5f-6a4e-4734-954c-6e85ff932a93.png">
 The 3D scatter plot above demonstrates the correlation between three healthcare variables
+
 https://84dafb14f59c4b4da153a66de6d3c534.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2Finteractive+life+exp+plot.html
 The link above presents an interactive scatter plot for global life_expectancy
+
+<img width="1196" alt="Screen Shot 2022-07-24 at 12 06 28" src="https://user-images.githubusercontent.com/78815761/180644217-41511b43-5bc3-434c-afb7-bd4bf628256e.png">
+
+https://84dafb14f59c4b4da153a66de6d3c534.app.rstudio.cloud/session/viewhtmlf772a5a652/index.html
+The link above demonstrates an interactive heat map for global healthcare data in 2010
