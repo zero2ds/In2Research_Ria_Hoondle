@@ -13,7 +13,7 @@ The boxplots above demonstrate the range of Global life expectancy values from t
 
 <img width="1109" alt="Screen Shot 2022-07-20 at 12 40 49" src="https://user-images.githubusercontent.com/78815761/180085686-12eb2c96-76fa-4be3-ac5f-b83257a4818f.png">
 
-This scatter plot demonstrates the negative correlation coefficient between the number of doctors available per 10,000 citizens of the country against the percentage probability of being diagnosed with cancer from the ages of 30-70. From the word document attached the values for the Pearson's product moment correlation coefficient can be read which provide evidence for the negative correlation.
+***This scatter plot demonstrates the negative correlation coefficient between the number of doctors available per 10,000 citizens of the country against the percentage probability of being diagnosed with cancer from the ages of 30-70. From the word document attached the values for the Pearson's product moment correlation coefficient can be read which provide evidence for the negative correlation.***
 
 <img width="405" alt="Screen Shot 2022-07-20 at 21 09 56" src="https://user-images.githubusercontent.com/78815761/180086010-e9a0147b-7697-476c-8d85-0a7ad059fed5.png">
 <img width="402" alt="Screen Shot 2022-07-20 at 21 10 04" src="https://user-images.githubusercontent.com/78815761/180086012-848d7d0f-b28c-40bf-ad57-ff7f825589c3.png">
@@ -27,7 +27,7 @@ The 3D scatter plot above demonstrates the correlation between three healthcare 
 
 https://84dafb14f59c4b4da153a66de6d3c534.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2Finteractive+life+exp+plot.html
 
-The link above presents an interactive scatter plot for global life_expectancy
+***The link above presents an interactive scatter plot for global life_expectancy***
 
 <img width="1196" alt="Screen Shot 2022-07-24 at 12 06 28" src="https://user-images.githubusercontent.com/78815761/180644217-41511b43-5bc3-434c-afb7-bd4bf628256e.png">
 
