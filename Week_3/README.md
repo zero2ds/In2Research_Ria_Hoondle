@@ -9,6 +9,8 @@ The boxplots above demonstrate the range of Global life expectancy values from t
 
 <img width="739" alt="Screen Shot 2022-07-20 at 12 40 24" src="https://user-images.githubusercontent.com/78815761/180085678-b2118ac0-0ce2-4607-848e-a8789bdbf46b.png">
 
+## Correlation models
+
 <img width="1109" alt="Screen Shot 2022-07-20 at 12 40 49" src="https://user-images.githubusercontent.com/78815761/180085686-12eb2c96-76fa-4be3-ac5f-b83257a4818f.png">
 
 This scatter plot demonstrates the negative correlation coefficient between the number of doctors available per 10,000 citizens of the country against the percentage probability of being diagnosed with cancer from the ages of 30-70. From the word document attached the values for the Pearson's product moment correlation coefficient can be read which provide evidence for the negative correlation.
