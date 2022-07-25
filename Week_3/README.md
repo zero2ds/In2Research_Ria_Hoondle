@@ -35,4 +35,4 @@ The link above demonstrates an interactive heat map for global healthcare data i
 
 ![heat map python](https://user-images.githubusercontent.com/78815761/180750372-9f554542-cd48-45b2-9033-b4a8d6bf0e64.png)
 
-The picture above demonstrates the same data in a heatmap however this time created in python
+The picture above demonstrates the same data in a heatmap however this time created in python - the script has been attatched in order to allocate countries to numbers on the x axis.
