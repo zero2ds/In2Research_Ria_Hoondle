@@ -32,3 +32,6 @@ The link above presents an interactive scatter plot for global life_expectancy
 https://84dafb14f59c4b4da153a66de6d3c534.app.rstudio.cloud/session/viewhtmlf772a5a652/index.html
 
 The link above demonstrates an interactive heat map for global healthcare data in 2010
+
+![heat map python](https://user-images.githubusercontent.com/78815761/180750372-9f554542-cd48-45b2-9033-b4a8d6bf0e64.png)
+The picture above demonstrates the same data in a heatmap however this time created in python
