@@ -3,4 +3,14 @@
 
 <img width="450" alt="Screen Shot 2022-07-25 at 11 49 32" src="https://user-images.githubusercontent.com/78815761/180797221-27524efd-157e-4bcd-9247-1d1b5c56dadd.png">
 <img width="450" alt="Screen Shot 2022-07-25 at 11 49 41" src="https://user-images.githubusercontent.com/78815761/180797242-a1fe971b-1d4a-47a7-ad96-a97fc003d160.png">
+
+The correlation plots above were created using the corrplot package and demonstrate the correlation between variables : Period.Ending, Accounts.Payable,  Accounts.Receivable, After.Tax.ROE, Capital.Expenditures, Cash.Ratio, Cash.and.Cash.Equivalents from the 'fundamentals.csv' data.
+
 <img width="449" alt="Screen Shot 2022-07-25 at 12 19 36" src="https://user-images.githubusercontent.com/78815761/180797254-7acab79f-c0d1-46de-81c1-9599cd3c4382.png">
+
+This conditional plot above explains the correlation between Gross profits and Investment data between the years 2000-2016
+## Exploring multipe regression
+<img width="509" alt="Screen Shot 2022-07-27 at 12 11 36" src="https://user-images.githubusercontent.com/78815761/181235236-1928745b-a910-411d-aa99-f4ad2d3be496.png">
+The diagnostic plot above demonstrates the relationship  between ' Cash.Ratio ~ Cost.of.Revenue + Earnings.Before.Tax + Fixed.Assets' and a summary of this data can be seen in the image below
+<img width="309" alt="Screen Shot 2022-07-27 at 12 11 53" src="https://user-images.githubusercontent.com/78815761/181235529-14c25b59-4ee1-42fb-9375-09981073c2bb.png">
+
