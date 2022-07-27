@@ -29,3 +29,10 @@ Using the 'applications.csv' file, I was able to perfrom logistics regression an
 <img width="399" alt="Screen Shot 2022-07-27 at 21 14 39" src="https://user-images.githubusercontent.com/78815761/181364205-c4cc542d-a2ee-4e32-bc46-d741ad8f4aeb.png">
 <img width="399" alt="Screen Shot 2022-07-27 at 21 14 02" src="https://user-images.githubusercontent.com/78815761/181364215-33bd3d09-7813-4da6-ae35-2327383faa64.png">
 The p value of 0.39 is very large suggesting there is not enough evidence to suggest the difference in survival rates betweeen those with 1 node and 4 nodes is due to a signifigant contributing factor.
+
+## Working with mosaic plots to demonstrate the relationship between variables
+
+<img width="401" alt="Screen Shot 2022-07-27 at 21 39 40" src="https://user-images.githubusercontent.com/78815761/181368082-93cf6b9b-72aa-45de-9d57-19b1f9bd236d.png">
+
+
+
