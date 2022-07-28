@@ -15,7 +15,8 @@ This conditional plot above explains the correlation between Gross profits and I
 <img width="509" alt="Screen Shot 2022-07-27 at 12 11 36" src="https://user-images.githubusercontent.com/78815761/181235236-1928745b-a910-411d-aa99-f4ad2d3be496.png">
 The diagnostic plot above demonstrates the relationship  between ' Cash.Ratio ~ Cost.of.Revenue + Earnings.Before.Tax + Fixed.Assets' and a summary of this data can be seen in the image below
 <img width="309" alt="Screen Shot 2022-07-27 at 12 11 53" src="https://user-images.githubusercontent.com/78815761/181235529-14c25b59-4ee1-42fb-9375-09981073c2bb.png">
-<The normality of residuals is one of the main assumptions of a linear regression model, the Q-Q plot helps us check if the residuals are normally distributed, the residuals vs fitted plot shows a general horizontal band suggesting we can assume normality however many data points are clustered in the centre - the red trend line does seem to fall around +/- 100 of 0 therefore I would assume sufficient normality.The Q-Q plot demonstrates a diagonal line and therefore we can assume normality also.>
+
+***The normality of residuals is one of the main assumptions of a linear regression model, the Q-Q plot helps us check if the residuals are normally distributed, the residuals vs fitted plot shows a general horizontal band suggesting we can assume normality however many data points are clustered in the centre - the red trend line does seem to fall around +/- 100 of 0 therefore I would assume sufficient normality.The Q-Q plot demonstrates a diagonal line and therefore we can assume normality also.***
 
 ## Exploring Logistic regression
 
