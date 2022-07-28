@@ -16,7 +16,10 @@ This conditional plot above explains the correlation between Gross profits and I
 The diagnostic plot above demonstrates the relationship  between ' Cash.Ratio ~ Cost.of.Revenue + Earnings.Before.Tax + Fixed.Assets' and a summary of this data can be seen in the image below
 <img width="309" alt="Screen Shot 2022-07-27 at 12 11 53" src="https://user-images.githubusercontent.com/78815761/181235529-14c25b59-4ee1-42fb-9375-09981073c2bb.png">
 
-***The normality of residuals is one of the main assumptions of a linear regression model, the Q-Q plot helps us check if the residuals are normally distributed, the residuals vs fitted plot shows a general horizontal band suggesting we can assume normality however many data points are clustered in the centre - the red trend line does seem to fall around +/- 100 of 0 therefore I would assume sufficient normality.The Q-Q plot demonstrates a diagonal line and therefore we can assume normality also.***
+***The normality of residuals is one of the main assumptions of a linear regression model, the Q-Q plot helps us check if the residuals are normally distributed, the residuals vs fitted plot shows a general horizontal band suggesting we can assume normality however many data points are clustered in the centre - the red trend line does seem to fall around +/- 100 of 0 therefore I would assume sufficient normality.The Q-Q plot demonstrates a diagonal line and therefore we can assume normality also. Furthermore, another way we can investigate normality is by performing the Two-sample Kolmogorov-Smirnov test, I performed this for the two variables Cash.Ratio and Fixed.Assets and the image below demonstrates that we must reject the nul hypothesis due to the very small p value and can therefore assume normality.***
+
+<img width="246" alt="Screen Shot 2022-07-28 at 11 21 23" src="https://user-images.githubusercontent.com/78815761/181483102-c302c578-c227-4460-acfc-08ef8f2f5479.png">
+
 
 ## Exploring Logistic regression
 
