@@ -12,7 +12,7 @@ This conditional plot above explains the correlation between Gross profits and I
 
 <img width="982" alt="Screen Shot 2022-07-30 at 13 07 28" src="https://user-images.githubusercontent.com/78815761/181912994-909e6e71-27ec-4073-bd32-e9862dc4bb45.png">
 
-This Violin plot was made using the ggplot() package and demonstrates that an incomplete higher education has led to a wide range of total incomes and therefore it could be argued that the highest education is not essential for higher incomes - weak correlation between factors
+This Violin plot was made using the ggplot() package and demonstrates that an incomplete higher education has led to a wide range of total incomes and therefore it could be argued that the highest education is not essential for higher incomes - weak correlation between factors is also demonstrated by the numerous outliers highlighted by coloured dots.
 
 ## Exploring multiple regression
 
