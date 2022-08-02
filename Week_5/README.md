@@ -4,7 +4,7 @@
 
 <img width="488" alt="Screen Shot 2022-08-02 at 14 45 17" src="https://user-images.githubusercontent.com/78815761/182390147-d4357273-61dd-42a9-aa16-d05b5edc967b.png">
 
-| X | Ticker Symbol  | Cool  |
+| X | Ticker Symbol  | CASH  |
 | - |:--------------:| -----:|
 | 0 | AAL            | 53    |
 | 1 | AAL            | 75    |
@@ -37,3 +37,6 @@
 | 28| ADI            | 821   |
 | 29| ADI            | 404   |
 | 30| ADI            | 272   |
+
+##### This table represents a subset of the fundamentals data sheet.
+
