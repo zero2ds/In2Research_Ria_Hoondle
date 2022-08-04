@@ -1,6 +1,6 @@
 # Ria's Week 5 progress
 ## Circular bar plot created based upon the fundamentals.csv data
-##### This plot was made using the tidyverse and viridis package - The yellow section represents the Cash. Ratio, the green section represents the Current.Ratio and the purple section represents the Gross.Margin.
+##### This plot was made using the tidyverse and viridis package - The yellow section represents the Cash. Ratio, the green section represents the Current.Ratio and the purple section represents the Gross.Margin.  The code for this graph was very complex due to the circular style, it was necessary to create gaps between the ticker symbol groups and a grid foundation structure.
 
 <img width="488" alt="Screen Shot 2022-08-02 at 14 45 17" src="https://user-images.githubusercontent.com/78815761/182390147-d4357273-61dd-42a9-aa16-d05b5edc967b.png">
 
@@ -42,5 +42,5 @@
 
 https://6c1f442f4caa4e668487e74b448396a6.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2Fpacking+circles.html
 
-##### This table represents a subset of the fundamentals data sheet and the web link allows the interactive packing circles plot to be accessed which demonstrates the data in the table.
+##### This table represents a subset of the fundamentals data sheet and the web link allows the interactive packing circles plot to be accessed which demonstrates the data in the table. The packing circles plot has been made such that the larger the Cash.Ratio of the company/Ticker symbol individual, the greater the radius of the circle.
 
