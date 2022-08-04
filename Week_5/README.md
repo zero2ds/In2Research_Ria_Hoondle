@@ -51,6 +51,8 @@ https://6c1f442f4caa4e668487e74b448396a6.app.rstudio.cloud/file_show?path=%2Fclo
 
 ![AnimatedBubble](https://user-images.githubusercontent.com/78815761/182946638-cd76548d-3aa6-44eb-9cd7-8a36799e4bb3.gif)
 
+##### The animated plot below demonstrates the same data as above however instead I have used the facet function to split groups amongst the Ticker Symbol coloumn
+
 ![Facet](https://user-images.githubusercontent.com/78815761/182949782-125f31e3-475f-4646-a76b-35f8fd431b6e.gif)
 
 ##### The animated plot below demonstrates the cash.Ratio data from the fundamentals.csv
