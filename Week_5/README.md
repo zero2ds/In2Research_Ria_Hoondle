@@ -47,6 +47,11 @@ https://6c1f442f4caa4e668487e74b448396a6.app.rstudio.cloud/file_show?path=%2Fclo
 <img width="604" alt="Screen Shot 2022-08-02 at 16 22 54" src="https://user-images.githubusercontent.com/78815761/182412468-fbf0d729-0514-4154-94e7-bd033af01156.png">
 
 ## Exploring animated plots
+#####  The animated bubble chart below was made in ordedr to show the relationship betwen After Tax ROE and Cash Ratio data from the years 2012-2016 and the gif shows the progression in figures using animation. From 2012-2016 the values figures seem to be increasing in value. The differing colours represent the different Ticker symbols here as shown by the legend. 
+
+![AnimatedBubble](https://user-images.githubusercontent.com/78815761/182946638-cd76548d-3aa6-44eb-9cd7-8a36799e4bb3.gif)
+
+
 ##### The animated plot below demonstrates the cash.Ratio data from the fundamentals.csv
 
 ![CashRatio](https://user-images.githubusercontent.com/78815761/182941594-4026ec97-a13b-4d65-96b0-34f4fd802f21.gif)
