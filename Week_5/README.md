@@ -46,6 +46,7 @@ https://6c1f442f4caa4e668487e74b448396a6.app.rstudio.cloud/file_show?path=%2Fclo
 
 <img width="604" alt="Screen Shot 2022-08-02 at 16 22 54" src="https://user-images.githubusercontent.com/78815761/182412468-fbf0d729-0514-4154-94e7-bd033af01156.png">
 
+##### The animated plot below demonstrates the cash.Ratio data from the fundamentals.csv
 
 ![CashRatio](https://user-images.githubusercontent.com/78815761/182941594-4026ec97-a13b-4d65-96b0-34f4fd802f21.gif)
 
