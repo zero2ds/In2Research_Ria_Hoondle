@@ -46,5 +46,6 @@ https://6c1f442f4caa4e668487e74b448396a6.app.rstudio.cloud/file_show?path=%2Fclo
 
 <img width="604" alt="Screen Shot 2022-08-02 at 16 22 54" src="https://user-images.githubusercontent.com/78815761/182412468-fbf0d729-0514-4154-94e7-bd033af01156.png">
 
-![]([name-of-giphy.gif](https://5e723c00a5ab4d19bdff076dc7baf09f.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2F288-animated-barplot-transition.gif))
+
+![CashRatio](https://user-images.githubusercontent.com/78815761/182941594-4026ec97-a13b-4d65-96b0-34f4fd802f21.gif)
 
