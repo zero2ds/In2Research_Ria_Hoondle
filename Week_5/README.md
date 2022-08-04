@@ -39,10 +39,11 @@
 | 30| ADI            | 272   |
 
 ## Exploring the circular packing interactive plot
-
-file:///Users/RiaHoondle/Downloads/PackingCircles.html
-
 ##### This table represents a subset of the fundamentals data sheet and the web link allows the interactive packing circles plot to be accessed which demonstrates the data in the table. The packing circles plot has been made such that the larger the Cash.Ratio of the company/Ticker symbol individual, the greater the radius of the circle.
+
+https://5e723c00a5ab4d19bdff076dc7baf09f.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FPackingCircles.html
+
+<img width="508" alt="Screen Shot 2022-08-04 at 21 55 43" src="https://user-images.githubusercontent.com/78815761/182951080-4679629e-3f3b-4636-bef3-7956eb2712cb.png">
 
 <img width="604" alt="Screen Shot 2022-08-02 at 16 22 54" src="https://user-images.githubusercontent.com/78815761/182412468-fbf0d729-0514-4154-94e7-bd033af01156.png">
 
