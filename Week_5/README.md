@@ -49,6 +49,9 @@ https://5e723c00a5ab4d19bdff076dc7baf09f.app.rstudio.cloud/file_show?path=%2Fclo
 #####  The animated bubble chart below was made in ordedr to show the relationship betwen After Tax ROE and Cash Ratio data from the years 2012-2016 and the gif shows the progression in figures using animation. From 2012-2016 the values figures seem to be increasing in value. The differing colours represent the different Ticker symbols here as shown by the legend. 
 
 ![AnimatedBubble](https://user-images.githubusercontent.com/78815761/182946638-cd76548d-3aa6-44eb-9cd7-8a36799e4bb3.gif)
+### I was able to create the same animated plot in python using plotly package as shown below, the Jupyter notebook script has been attatched.
+
+![newplot (1)](https://user-images.githubusercontent.com/78815761/182959885-25ee7a2a-b750-4462-be2e-e192581735a3.png)
 
 ##### The animated plot below demonstrates the same data as above however instead I have used the facet function to split groups amongst the Ticker Symbol coloumn
 
@@ -57,4 +60,3 @@ https://5e723c00a5ab4d19bdff076dc7baf09f.app.rstudio.cloud/file_show?path=%2Fclo
 ##### The animated plot below demonstrates the cash.Ratio data from the fundamentals.csv
 
 ![CashRatio](https://user-images.githubusercontent.com/78815761/182941594-4026ec97-a13b-4d65-96b0-34f4fd802f21.gif)
-
