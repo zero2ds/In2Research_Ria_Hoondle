@@ -60,3 +60,14 @@ https://5e723c00a5ab4d19bdff076dc7baf09f.app.rstudio.cloud/file_show?path=%2Fclo
 ##### The animated plot below demonstrates the cash.Ratio data from the fundamentals.csv
 
 ![CashRatio](https://user-images.githubusercontent.com/78815761/182941594-4026ec97-a13b-4d65-96b0-34f4fd802f21.gif)
+
+## Using the healthcare data set
+##### I combined the dentists.csv, pharmactists.csv and medicaldoctors.csv together in order to make a new data frame and the following plots - an animated bubble plot and a Hex Plot.
+
+![DoctorsVsDentists](https://user-images.githubusercontent.com/78815761/183078676-548a8c4f-37b8-4be4-b8c2-1bf33a2b59b6.gif)
+
+![DoctorsvsDentistHexPlot](https://user-images.githubusercontent.com/78815761/183078709-bc6edb84-d2e2-42a5-8e62-0a7b9bca57dd.png)
+
+
+
+
