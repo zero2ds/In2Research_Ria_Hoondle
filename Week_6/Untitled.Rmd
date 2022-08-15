@@ -1,0 +1,284 @@
+---
+title: "How does healthcare differ globally according to external factors?"
+author: "Ria Hoondle"
+date: "2022-08-08"
+output: html_document
+---
+# Introduction
+### What type of data are we evaluating?
+
+The following report demonstrates a series of plots generated using *WHO data* extracted from kaggle: [https://www.kaggle.com/datasets/utkarshxy/who-worldhealth-statistics-2020-complete], these excel data sets used for this consist of information based on:
+  
+  -Life expectancy
+  -Number of cases of Malaria/Turbeculosis
+  -Road traffic deaths
+  -Population numbers and many more. 
+  
+The data used was recorded from *2000-2016* and therefore can be considered relevant.
+
+
+### What type of factors can we expect to influence healthcare standards in a country?
+
+```{r,echo=FALSE,  warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: 3D network diagram of healthcare influencing factors."}
+library(igraph)
+library(networkD3)
+library(tidyverse)
+library(ggplot2)
+data <- data_frame(
+  from=c("Life Expectancy", "Life Expectancy", "Malaria Incedences", "Turbeculosis cases", "Sanitation", "Turbeculosis cases", "Traffic Incedences", "Malaria Incedences", "Sanitation", "Turbeculosis cases", "Population", "Life Expectancy", "Smoking age"),
+  to=c("Malaria Incedences", "Traffic Incedences", "Infant Mortality", "Life Expectancy", "Sanitation", "Life Expectancy", "Malaria Incedences", "Cancer Diagnosis", "Life Expectancy", "Sanitation", "Life Expectancy", "Malaria Incedences", "Population")
+)
+p <- simpleNetwork(data, height="100px", width="100px",        
+        Source = 1,                 # column number of source
+        Target = 2,                 # column number of target
+        linkDistance = 10,          # distance between node. Increase this value to have more space between nodes
+        charge = -900,                # numeric value indicating either the strength of the node repulsion (negative value) or attraction (positive value)
+        fontSize = 14,               # size of the node names
+        fontFamily = "serif",       # font og node names
+        linkColour = "#666",        # colour of edges, MUST be a common colour for the whole graph
+        nodeColour = "#69b3a2",     # colour of nodes, MUST be a common colour for the whole graph
+        opacity = 0.9,              # opacity of nodes. 0=transparent. 1=no transparency
+        zoom = T                    # Can you zoom on the figure?
+        )
+p
+```
+
+###### Most of the factors above have direct correlation between each other and therefore I believe it is important to test the strength of this correlation
+
+### Is Malaria spreading across the globe?
+```{r,echo=FALSE,  warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Malaria cases around the globe."}
+library(ggplot2)
+library(tidyverse)
+library(mapdata)
+population <- read.csv("population10SDG3.8.2.csv",header = TRUE)
+malaria <- read.csv("incedenceOfMalaria.csv",header = TRUE)
+malaria1 <- subset(malaria, malaria$Period=="2010")
+names(malaria1)[names(malaria1)=='Location'] <-"region"
+mapdata <-map_data("world")
+mapdata <-left_join(mapdata,malaria1, by='region')
+mapdata1 <-mapdata %>%filter(!is.na(mapdata$First.Tooltip))
+map1 <-ggplot(mapdata1, aes(x=long, y=lat, group=group)) +
+geom_polygon(aes(fill= First.Tooltip), colour="grey") 
+map2 <- map1 + scale_fill_gradient(name = "Malaria incedences", low = "yellow", high =  "red", na.value = "grey50")+
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title.y=element_blank(),
+        axis.title.x=element_blank(),
+        rect = element_blank())
+map2
+```
+
+### Which countries should we avoid to escape Malaria?
+
+The Choropleth graph above demonstrates to us that Africa generally demonstrated the greatest number of malaria incidences during 2010. This could be due to a number of factors including weather conditions allowing the species to thrive or perhaps due to lack of medical care available to treat the disease early. This map encouraged me to investigate further into life expectancy globally to discover whether or not this correlated with the incidences of Malaria recorded in this time period.
+
+#### Specific data on malaria cases can be seen on this circular packing plot below, the circles with a larger radius are defined by those countries with he larger proportion of malaria cases.
+
+#### *This plot allows us to see the specific countries in Africa suffering the greatest from the spread of Malaria.*
+
+```{r,warning=FALSE, message=FALSE, echo=FALSE, , fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure:Malaria cases around the globe."}
+malaria_2016 <- subset(malaria, malaria$Period=="2016")
+df <- subset(malaria_2016, select=c("Location","First.Tooltip"))
+new_df_1 <- df[c(1:107),]
+data <- new_df_1 %>% 
+  rename(value = First.Tooltip,
+         group = Location)
+library(packcircles)
+library(ggplot2)
+library(viridis)
+library(ggiraph)
+library(dplyr)
+
+data$text <- paste("name: ",data$group, "\n", "value:", data$value, "\n", "Malaria cases")
+
+packing <- circleProgressiveLayout(data$value, sizetype='area')
+data <- cbind(data, packing)
+dat.gg <- circleLayoutVertices(packing, npoints=50)
+
+p <- ggplot() + 
+  geom_polygon_interactive(data = dat.gg, aes(x, y, group = id, fill=id, tooltip = data$text[id], data_id = id), colour = "black", alpha = 0.6) +
+  scale_fill_viridis() +
+  geom_text(data = data, aes(x, y, label = gsub("Group_", "", group)), size=2, color="black") +
+  theme_void() + 
+  theme(legend.position="none", plot.margin=unit(c(0,0,0,0),"cm") ) + 
+  coord_equal()
+
+widg <- ggiraph(ggobj = p, width_svg = 7, height_svg = 7)
+widg
+
+```
+
+### *Exploring choropleth maps further*
+## How does the percentage proportion of the population with primary reliance on clean fuels and technologies vary across the globe?
+
+The interactive world map demonstrates the co-ordinates of the individual countries from the data set and the colour scheme allows us to acknowledge that Africa, New Zealand and south Asia generally demonstrates larger proportions of the population with primary reliance on clean fuels and technologies compared to the rest of the globe. We could estimate the reason for this to be due to lack of external resources for industrial production of products.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Percentage proportion of countries having fuels as their primary reliance. "}
+library(ggplot2)
+library(tidyverse)
+library(viridis)
+library(dplyr)
+library(plotly)
+library(readr)
+library(mapdata)
+
+tech <- read.csv("cleanFuelAndTech.csv", header = TRUE)
+mapdata <-map_data("world")
+names(tech)[names(tech)=='Location'] <-"region"
+names(tech)[names(tech)=='First.Tooltip'] <-"Proportion"
+plotdata <-left_join(mapdata,tech, by='region')
+mapdata1 <-plotdata %>%filter(!is.na(plotdata$Proportion))
+df <-mapdata1 %>%
+  select (long,lat,Period, Proportion)
+
+geo_properties=list(
+  showland=TRUE,
+  sowsubunits=TRUE,
+  landcolor=toRGB('#f0f0f0'),
+  showlakes=TRUE,
+  lakecolor=toRGB('white')
+)
+p <- plot_geo(df %>% sample_n (1000),
+               lat=~lat,
+               lon=~long,
+              color=~Proportion)%>% 
+  layout(geo=geo_properties)
+p
+```
+
+## How does life expectancy vary across the globe?
+#### Here is an grouped line plot demonstrating the life expectancy in different continents across the globe in different years from the 2000's
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Life expectancy plot from 2000-2019."}
+life_expectancy <- read.csv("WHOregionLifeExpectancyAtBirth.csv",header = TRUE)
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+library(viridis)
+p <- life_expectancy %>%
+  ggplot( aes(x=Period, y=First.Tooltip, group=Location, color=Location)) +
+    geom_line() +
+    scale_color_viridis(discrete = TRUE) +
+    ggtitle("Life Expectancy from 2000-2019 across the globe") +
+    theme_ipsum() +
+    ylab("Life Expectancy")
+p
+```
+ 
+####*The line chart here demonstrates a general trend of life expectancy increasing globally through the 2000's, this increase appears to be greater from those countries in Africa compared with the Western Pacific and Europe where life expectancy was already high, indicating strong development and progression in healthcare must be prevelant in Africa.*
+ 
+```{r, ,echo=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Life expectancy boxplot." }
+life_expectancy <- read.csv("WHOregionLifeExpectancyAtBirth.csv",header = TRUE)
+life_expectancy_female <-subset(life_expectancy, life_expectancy$Dim1=="Female")
+life_expectancy_male <-subset(life_expectancy, life_expectancy$Dim1=="Male")
+plotdata <- rbind(life_expectancy_female, life_expectancy_male)
+
+library(ggplot2)
+
+df=subset(plotdata, select=-c(Period,Indicator))
+ggplot(plotdata,
+       aes(x = Location, y = First.Tooltip, fill=Dim1)) +
+  geom_boxplot() +   labs(y="Life expectancy",title = "Global life expectancy from 2000-2019") + geom_jitter(alpha = 0.5, 
+                                                                                                            width=.2) 
+```
+
+The grouped boxplot above demonstrates to us the range in the average life expectancy of individuals across each continent from the years 2000-2019 and we are able to see that generally Africa has experienced the lowest life expectancy among individuals and we could estimate that the higher incidences of malaria cases here as opposed to other regions is a significant depending factor for this. The relationship between factors fascinated me and therefore encouraged me to investigate the correlation between other factors such as road traffic deaths, sanitation levels, doctors available and many more.
+
+## Where can we find the best healthcare services worldwide?
+#### The interactive heatmap here demonstrates where there are high numbers of road traffic deaths, many doctors available, great sanitation and frequent cancer diagnosis and this data can help us explain the countries corresponding average life expectancy etc.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Heatmap showing individual countries cancer diagnosis figures, road trafic deaths, doctor availability and sanitation levels."}
+library(heatmaply)
+correlation_data <- read.csv("correlation_data.csv",header = TRUE)
+data <-correlation_data %>%
+  filter(Location %in% c("France", "Sweden", "Italy", "Spain", "England", "Portugal", "Greece", "Peru", "Chile", "Brazil", "Argentina", "Bolivia", "Venezuela", "Australia", "New Zealand", "Fiji", "China", "India", "Thailand", "Afghanistan", "Bangladesh", "United States of America", "Canada", "Kenya")) %>%
+  arrange(Location) %>%
+  mutate(Location = factor(Location, Location))
+
+mat <-data
+rownames(mat) <- mat[,1]
+mat <- mat %>% dplyr::select(-Location)
+mat <- as.matrix(mat)
+p <- heatmaply(mat, 
+               dendrogram = "none",
+               xlab = "Healthcare data", ylab = "Country", 
+               main = "Global Healthcare data in 2010",
+               scale = "column",
+               margins = c(60,100,40,20),
+               grid_color = "white",
+               grid_width = 0.00001,
+               titleX = FALSE,
+               hide_colorbar = TRUE,
+               branches_lwd = 0.1,
+               label_names = c("Country", "Feature:", "Value"),
+               fontsize_row = 5, fontsize_col = 5,
+               labCol = colnames(mat),
+               labRow = rownames(mat),
+               heatmap_layers = theme(axis.line=element_blank())
+)
+p
+```
+## Are sanitation levels consistent across the globe?
+#### From the slope diagram we are able to see that generally sanotation levels have remained consistent from 2007-2017, particularly in Singapore where ther have been no faults with sanitation, this explains why there is a high life expectancy among individuals in singapore and we can predict the number of doctors/pharmacists available must also be high.
+
+```{r,echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Figure explaining levels of sanitation globally"}
+library(CGPfunctions)
+library(dplyr)
+library(ggplot2)
+sanitation <- read.csv("safelySanitization.csv",header = TRUE)
+urban <- subset(sanitation, sanitation$Dim1=="Urban")
+rural <-subset(sanitation, sanitation$Dim1=="Rural")
+
+df <- urban %>%
+  filter(Period %in% c(2007, 2011, 2014, 2017) &
+           Location %in% c("Albania", "China", 
+                          "Egypt", "Iraq", 
+                          "Nigeria", "Peru",
+                          "Singapore")) %>%
+  mutate(Period = factor(Period),
+         First.Tooltip = round(First.Tooltip)) 
+
+urban$Period <- as.factor(urban$Period)
+
+newggslopegraph(df, Period, First.Tooltip, Location) +
+  labs(title="Population using safely managed sanitation services (%)", 
+       subtitle="Global data", 
+       caption="source: WHO data")
+```
+
+## Is there a relationship between availability of doctors and cancer diagnosis around the world?
+#### *Values here are based upon Pearsons Correlation coefficient.*
+
+From the Interactive heat map above we are able to see which countries lack specific sanitation facilities, have the larger portion of individuals suffering from cancer, the number of road traffic deaths and the level of doctor availability. In order to see whether these individual variables showed any type of correlation between them I constructed a correlation plot where the negative values indicate negative correlation and vice versa.
+
+```{r,echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Correlation grid showing relationship between different healthcare factors."}
+dataset <-dplyr::select_if(correlation_data, is.numeric)
+r <- cor(dataset, use="complete.obs")
+library(ggplot2)
+library(ggcorrplot) 
+ggcorrplot(r, 
+           hc.order = TRUE, 
+           type = "lower",
+           lab = TRUE)
+```
+
+### Exploting correlation between two variables further
+##### *The following interactive plot demonstrates the relationship between the availability of doctors and the availability of pharamcists in individual countries. The colour of the spot corresponds to the individual country and the size indicates the number of dentists available per 10,000 people in this specific location.*
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Interactive scatter plot showing the relationship between doctors and pharmacista available in different countries."}
+health <- read.csv("health.csv",header = TRUE)
+library(ggplot2)
+library(plotly)
+
+p <- health %>%
+  filter(Year==2015) %>%
+  ggplot( aes(Doctors_per_10000, Pharmacists_per_10000, size = Dentists_per_10000, color=Location)) +
+  geom_point() +
+  theme_bw()
+
+ggplotly(p)
+```
+#### *The data here is specific to the year 2015 and if we analyse countries within Africa such as Libya we can see they do not have as large of a proportion of doctors and pharmacists available per 10,000 people compared with many countries within Europe such as Germany and Austria.*
+
+
